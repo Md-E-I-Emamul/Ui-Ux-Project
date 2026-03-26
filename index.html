@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Learning — Learn Technical Skills</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ========== LANDING PAGE ========== -->
+<div id="page-landing" class="page active">
+  <nav class="nav">
+    <div class="nav-brand">
+      <span class="brand-icon">DL</span>
+      <span class="brand-name">Digital Learning</span>
+    </div>
+    <a href="#" class="nav-link" onclick="showPage('roadmap')">Roadmaps</a>
+    <button class="btn-menu">☰</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Learn Technical<br/>Skills With a<br/><span class="accent">Clear Roadmap</span></h1>
+      <p class="hero-sub">Stop random learning.<br/>Follow Structured Steps.</p>
+      <button class="btn-primary" onclick="showPage('login')">Start Learning</button>
+    </div>
+    <div class="hero-visual">
+      <div class="book-icon">
+        <div class="book-glow"></div>
+        <svg viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 20 Q80 5 140 20 L140 155 Q80 145 20 155 Z" fill="url(#bookGrad)" opacity="0.9"/>
+          <path d="M80 10 L80 155" stroke="#c084fc" stroke-width="2" opacity="0.7"/>
+          <path d="M40 45 Q60 42 80 45" stroke="#22d3ee" stroke-width="1.5" opacity="0.8"/>
+          <path d="M40 60 Q60 57 80 60" stroke="#22d3ee" stroke-width="1.5" opacity="0.6"/>
+          <path d="M40 75 Q60 72 80 75" stroke="#22d3ee" stroke-width="1.5" opacity="0.4"/>
+          <path d="M85 45 Q105 42 120 45" stroke="#f0abfc" stroke-width="1.5" opacity="0.8"/>
+          <path d="M85 60 Q105 57 120 60" stroke="#f0abfc" stroke-width="1.5" opacity="0.6"/>
+          <path d="M85 75 Q105 72 120 75" stroke="#f0abfc" stroke-width="1.5" opacity="0.4"/>
+          <rect x="55" y="155" width="50" height="15" rx="3" fill="#6b21a8" opacity="0.8"/>
+          <defs>
+            <linearGradient id="bookGrad" x1="20" y1="0" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#581c87"/>
+              <stop offset="0.5" stop-color="#7c3aed"/>
+              <stop offset="1" stop-color="#c084fc"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🗺️</div>
+      <div class="feature-label">Structured Learning Roadmap</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📈</div>
+      <div class="feature-label">Progress Track</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-label">Daily Motivation</div>
+    </div>
+  </section>
+
+  <footer class="landing-footer">
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+  </footer>
+</div>
+
+<!-- ========== LOGIN / SIGNUP PAGE ========== -->
+<div id="page-login" class="page">
+  <nav class="nav dark-nav">
+    <div class="nav-brand"><span class="brand-icon">DL</span></div>
+    <button class="btn-back" onclick="showPage('landing')">← Back</button>
+  </nav>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <svg viewBox="0 0 80 80" width="70" height="70">
+          <polygon points="40,5 70,30 70,55 40,75 10,55 10,30" fill="url(#logoGrad)" opacity="0.9"/>
+          <polygon points="40,15 62,32 62,52 40,65 18,52 18,32" fill="#0f0a1e" opacity="0.7"/>
+          <path d="M30 40 L40 28 L50 40 L40 52 Z" fill="#c084fc" opacity="0.9"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="80" y2="80">
+              <stop stop-color="#c084fc"/>
+              <stop offset="1" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h2 class="auth-title">Welcome</h2>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Login</button>
+        <button class="auth-tab" id="tab-signup" onclick="switchAuthTab('signup')">Sign Up</button>
+      </div>
+
+      <div id="form-login" class="auth-form">
+        <input type="email" class="auth-input" placeholder="Email" />
+        <div class="input-wrap">
+          <input type="password" class="auth-input" id="login-pass" placeholder="Password" />
+          <span class="eye-toggle" onclick="togglePass('login-pass')">👁</span>
+        </div>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+        <button class="btn-auth btn-login" onclick="showPage('dashboard')">Login</button>
+      </div>
+
+      <div id="form-signup" class="auth-form hidden">
+        <input type="text" class="auth-input" placeholder="Full Name" />
+        <input type="email" class="auth-input" placeholder="Email" />
+        <div class="input-wrap">
+          <input type="password" class="auth-input" id="signup-pass" placeholder="Password" />
+          <span class="eye-toggle" onclick="togglePass('signup-pass')">👁</span>
+        </div>
+        <button class="btn-auth btn-signup" onclick="showPage('dashboard')">Sign Up</button>
+      </div>
+
+      <p class="auth-brand">Digital Learning</p>
+    </div>
+  </div>
+  <footer class="landing-footer dark-footer">
+    <a href="#">About</a><a href="#">Contact</a><a href="#">Privacy</a>
+  </footer>
+</div>
+
+<!-- ========== DASHBOARD PAGE ========== -->
+<div id="page-dashboard" class="page">
+  <nav class="nav dark-nav">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <span class="nav-page-title">Dashboard</span>
+    <div class="nav-right">
+      <span class="nav-icon">👤</span>
+      <span class="nav-icon">⬇</span>
+    </div>
+  </nav>
+
+  <div class="dash-content">
+    <section class="dash-section">
+      <h3 class="section-label neon-cyan">Continue Learning</h3>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" style="width:80%"></div>
+        </div>
+        <div class="progress-row">
+          <span class="progress-skill-name">Frontend Development</span>
+          <span class="progress-pct">80%</span>
+        </div>
+        <button class="btn-continue" onclick="showPage('learn')">Continue →</button>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <h3 class="section-label neon-cyan">Start a new Skill</h3>
+      <div class="skill-grid-small">
+        <div class="skill-pill" onclick="showPage('roadmap')">
+          <span class="pill-logo python-logo">🐍</span>
+          <span>Python</span>
+          <button class="pill-btn">Start</button>
+        </div>
+        <div class="skill-pill" onclick="showPage('roadmap')">
+          <span class="pill-logo">⚛️</span>
+          <span>Front End</span>
+          <button class="pill-btn">Start</button>
+        </div>
+        <div class="skill-pill" onclick="showPage('roadmap')">
+          <span class="pill-logo">➕</span>
+          <span>C++</span>
+          <button class="pill-btn">Start</button>
+        </div>
+        <div class="skill-pill" onclick="showPage('roadmap')">
+          <span class="pill-logo">⚙️</span>
+          <span>Back End</span>
+          <button class="pill-btn">Start</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="motivation-card">
+        <span class="motivation-label neon-cyan">Motivation</span>
+        <p class="daily-quote">Daily Quote : <em>"Eat – Sleep – Code – Repeat"</em></p>
+      </div>
+    </section>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="bnav-btn active" onclick="showPage('dashboard')">🏠</button>
+    <button class="bnav-btn" onclick="showPage('roadmap')">🗺️</button>
+    <button class="bnav-btn" onclick="showPage('learn')">📖</button>
+    <button class="bnav-btn" onclick="showPage('progress')">📊</button>
+  </nav>
+</div>
+
+<!-- ========== ROADMAP PAGE ========== -->
+<div id="page-roadmap" class="page">
+  <nav class="nav dark-nav">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <span class="nav-page-title">Roadmap</span>
+    <div class="nav-right">
+      <span class="nav-icon">👤</span>
+      <span class="nav-icon">⬇</span>
+    </div>
+  </nav>
+
+  <div class="roadmap-content">
+    <button class="btn-choose neon-btn">Choose your Preferred Skills</button>
+
+    <div class="skill-cards-grid">
+      <div class="skill-card" onclick="showPage('learn')">
+        <div class="skill-card-img frontend-img">
+          <span>INTRO TO<br/>Front-End<br/>Web Dev</span>
+        </div>
+        <button class="skill-start-btn">Start</button>
+      </div>
+      <div class="skill-card" onclick="showPage('learn')">
+        <div class="skill-card-img python-img">
+          <span>🐍 Python</span>
+        </div>
+        <button class="skill-start-btn">Start</button>
+      </div>
+      <div class="skill-card" onclick="showPage('learn')">
+        <div class="skill-card-img backend-img">
+          <span>Backend Dev<br/>(Java)</span>
+        </div>
+        <button class="skill-start-btn">Start</button>
+      </div>
+      <div class="skill-card" onclick="showPage('learn')">
+        <div class="skill-card-img react-img">
+          <span>⚛️ React JS</span>
+        </div>
+        <button class="skill-start-btn">Start</button>
+      </div>
+      <div class="skill-card" onclick="showPage('learn')">
+        <div class="skill-card-img cpp-img">
+          <span>C++</span>
+        </div>
+        <button class="skill-start-btn">Start</button>
+      </div>
+      <div class="skill-card" onclick="showPage('learn')">
+        <div class="skill-card-img sql-img">
+          <span>SQL</span>
+        </div>
+        <button class="skill-start-btn">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="bnav-btn" onclick="showPage('dashboard')">🏠</button>
+    <button class="bnav-btn active" onclick="showPage('roadmap')">🗺️</button>
+    <button class="bnav-btn" onclick="showPage('learn')">📖</button>
+    <button class="bnav-btn" onclick="showPage('progress')">📊</button>
+  </nav>
+</div>
+
+<!-- ========== LEARN SKILL PAGE ========== -->
+<div id="page-learn" class="page">
+  <nav class="nav dark-nav">
+    <button class="hamburger" onclick="showPage('roadmap')">←</button>
+    <span class="nav-page-title neon-magenta">Frontend Development</span>
+    <div class="nav-right">
+      <span class="nav-icon">👤</span>
+      <span class="nav-icon">⬇</span>
+    </div>
+  </nav>
+
+  <div class="learn-content">
+    <div class="step-header">
+      <span class="step-badge">Step : 1</span>
+      <span class="step-title">Learn HTML Basics</span>
+    </div>
+
+    <div class="tutorial-card cyan-border">
+      <div class="tutorial-tag">Tutorial : 1</div>
+      <label class="check-item"><input type="checkbox" checked /> HTML Basic</label>
+      <label class="check-item"><input type="checkbox" checked /> HTML Tags</label>
+    </div>
+
+    <div class="tutorial-card blue-border">
+      <div class="tutorial-tag">Tutorial : 2</div>
+      <label class="check-item"><input type="checkbox" checked /> &lt;a&gt; Tag</label>
+      <label class="check-item"><input type="checkbox" checked /> &lt;br&gt; Tag</label>
+    </div>
+
+    <div class="tutorial-card purple-border">
+      <div class="tutorial-tag project-tag">Practise Projects</div>
+      <label class="check-item"><input type="checkbox" checked /> Make another web page &amp; link it</label>
+      <label class="check-item"><input type="checkbox" /> Describe the difference between paired &amp; self closing tag</label>
+    </div>
+
+    <div class="step-header" style="margin-top:1.5rem">
+      <span class="step-badge">Step : 2</span>
+      <span class="step-title">CSS Fundamentals</span>
+    </div>
+
+    <div class="tutorial-card cyan-border">
+      <div class="tutorial-tag">Tutorial : 3</div>
+      <label class="check-item"><input type="checkbox" /> CSS Selectors</label>
+      <label class="check-item"><input type="checkbox" /> Box Model</label>
+    </div>
+
+    <div class="tutorial-card blue-border">
+      <div class="tutorial-tag">Tutorial : 4</div>
+      <label class="check-item"><input type="checkbox" /> Flexbox</label>
+      <label class="check-item"><input type="checkbox" /> CSS Grid</label>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="bnav-btn" onclick="showPage('dashboard')">🏠</button>
+    <button class="bnav-btn" onclick="showPage('roadmap')">🗺️</button>
+    <button class="bnav-btn active" onclick="showPage('learn')">📖</button>
+    <button class="bnav-btn" onclick="showPage('progress')">📊</button>
+  </nav>
+</div>
+
+<!-- ========== PROGRESS PAGE ========== -->
+<div id="page-progress" class="page">
+  <nav class="nav dark-nav">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <span class="nav-page-title">Track Progress</span>
+    <div class="nav-right">
+      <span class="nav-icon search-icon">🔍</span>
+      <span class="nav-icon">⬇</span>
+    </div>
+  </nav>
+
+  <div class="progress-content">
+    <h3 class="progress-heading">Your Learning Progress</h3>
+
+    <div class="progress-skill-card">
+      <div class="skill-card-header">Web Development</div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill animate-fill" style="--target-width: 80%"></div>
+      </div>
+      <div class="skill-card-footer">
+        <span>Level : <strong>Medium</strong></span>
+        <span class="pct-badge">80%</span>
+      </div>
+    </div>
+
+    <div class="progress-skill-card">
+      <div class="skill-card-header">Python</div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill animate-fill yellow-fill" style="--target-width: 40%"></div>
+      </div>
+      <div class="skill-card-footer">
+        <span>Level : <strong>Beginner</strong></span>
+        <span class="pct-badge">40%</span>
+      </div>
+    </div>
+
+    <div class="progress-skill-card">
+      <div class="skill-card-header">C++</div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill animate-fill red-fill" style="--target-width: 20%"></div>
+      </div>
+      <div class="skill-card-footer">
+        <span>Level : <strong>Beginner</strong></span>
+        <span class="pct-badge">20%</span>
+      </div>
+    </div>
+
+    <div class="stats-card">
+      <div class="stats-title">Statistics</div>
+      <div class="stats-list">
+        <label class="check-item"><input type="checkbox" checked readonly /> Course Complete : 3</label>
+        <label class="check-item"><input type="checkbox" checked readonly /> Project Complete : 2</label>
+        <label class="check-item"><input type="checkbox" checked readonly /> Learning Streak : 5 days</label>
+      </div>
+    </div>
+
+    <div class="weekly-chart">
+      <div class="chart-bars">
+        <div class="chart-col">
+          <div class="bar" style="height:40%"></div>
+          <span class="bar-label">M</span>
+        </div>
+        <div class="chart-col">
+          <div class="bar" style="height:55%"></div>
+          <span class="bar-label">T</span>
+        </div>
+        <div class="chart-col">
+          <div class="bar" style="height:70%"></div>
+          <span class="bar-label">W</span>
+        </div>
+        <div class="chart-col">
+          <div class="bar active-bar" style="height:90%"></div>
+          <span class="bar-label">Th</span>
+        </div>
+        <div class="chart-col">
+          <div class="bar" style="height:50%"></div>
+          <span class="bar-label">F</span>
+        </div>
+        <div class="chart-col">
+          <div class="bar" style="height:30%"></div>
+          <span class="bar-label">S</span>
+        </div>
+        <div class="chart-col">
+          <div class="bar" style="height:20%"></div>
+          <span class="bar-label">Su</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="bnav-btn" onclick="showPage('dashboard')">🏠</button>
+    <button class="bnav-btn" onclick="showPage('roadmap')">🗺️</button>
+    <button class="bnav-btn" onclick="showPage('learn')">📖</button>
+    <button class="bnav-btn active" onclick="showPage('progress')">📊</button>
+  </nav>
+</div>
+
+<!-- ========== SIDEBAR ========== -->
+<div id="sidebar" class="sidebar hidden">
+  <div class="sidebar-header">
+    <span class="brand-name">DL</span>
+    <button onclick="toggleSidebar()">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <button onclick="showPage('dashboard');toggleSidebar()">🏠 Dashboard</button>
+    <button onclick="showPage('roadmap');toggleSidebar()">🗺️ Roadmaps</button>
+    <button onclick="showPage('learn');toggleSidebar()">📖 Learn Skill</button>
+    <button onclick="showPage('progress');toggleSidebar()">📊 Progress</button>
+    <hr/>
+    <button onclick="showPage('landing');toggleSidebar()">🚪 Logout</button>
+  </nav>
+</div>
+<div id="sidebar-overlay" class="sidebar-overlay hidden" onclick="toggleSidebar()"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
